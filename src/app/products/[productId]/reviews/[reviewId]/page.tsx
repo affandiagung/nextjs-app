@@ -1,4 +1,4 @@
-import { error } from 'console';
+'use client';
 import { notFound } from 'next/navigation';
 
 function getRandomInt(count: number) {
@@ -10,7 +10,7 @@ export default function ReviewDetail({
     params: { productId: string; reviewId: string };
 }) {
     const random = getRandomInt(2);
-    if (random === 1) throw new Error('Error loading review');
+    // if (random === 1) throw new Error('Something Wrong');
     if (
         isNaN(parseInt(params.reviewId)) ||
         parseInt(params.reviewId) > 100
@@ -18,11 +18,10 @@ export default function ReviewDetail({
         notFound();
     return (
         <>
-            <h1>
+            <div>
                 Review {params.reviewId} Detail about product{' '}
                 {params.productId}
-            </h1>
-            ;
+            </div>
         </>
     );
 }

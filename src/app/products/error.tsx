@@ -9,7 +9,7 @@ export default function Error({
     return (
         <>
             <div>
-                {error.message}{' '}
+                {error.message}
                 <button onClick={reset}>Try Again</button>
             </div>
         </>
